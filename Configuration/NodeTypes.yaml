@@ -1,0 +1,98 @@
+'Ttree.ContentCentral:ContentCentralMixin':
+  ui:
+    inspector:
+      groups:
+        contentCentral:
+          label: 'Content Inventory'
+  properties:
+    contentQuality:
+      type: integer
+      ui:
+        label: "Quality"
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: 'contentCentral'
+          position: 10
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '0':
+                label: 'Unknown'
+              '1':
+                label: 'More than bad'
+              '2':
+                label: 'Bad'
+              '3':
+                label: 'Average'
+              '4':
+                label: 'Good'
+              '5':
+                label: 'Really good'
+              '6':
+                label: 'Awesome'
+    contentReviewInterval:
+      type: integer
+      ui:
+        label: "Review Interval"
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: 'contentCentral'
+          position: 20
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '0':
+                label: 'Unknown'
+              '1':
+                label: 'Every week'
+              '4':
+                label: 'Every month'
+              '12':
+                label: 'Every quarter'
+              '24':
+                label: 'Every semester'
+              '48':
+                label: 'Every year'
+              '-1':
+                label: 'Never'
+    contentReviewDeadline:
+      type: DateTime
+      ui:
+        label: 'Review Deadline'
+        inspector:
+          group: 'contentCentral'
+          position: 30
+          editorOptions:
+            format: 'd-m-Y H:i'
+      validation:
+        'TYPO3.Neos/Validation/DateTimeValidator': []
+    _hiddenBeforeDateTime:
+      ui:
+        inspector:
+          group: 'contentCentral'
+          position: 40
+    _hiddenAfterDateTime:
+      ui:
+        inspector:
+          group: 'contentCentral'
+          position: 50
+
+'TYPO3.Neos:Document':
+  superTypes:
+    'Ttree.ContentCentral:ContentCentralMixin': 'Ttree.ContentCentral:ContentCentralMixin'
+
+'TYPO3.Neos:Shortcut':
+  superTypes:
+    'Ttree.ContentCentral:ContentCentralMixin': ~
+
+'TYPO3.Neos:Content':
+  superTypes:
+    'Ttree.ContentCentral:ContentCentralMixin': 'Ttree.ContentCentral:ContentCentralMixin'
+
+'TYPO3.Neos:Plugin':
+  superTypes:
+    'Ttree.ContentCentral:ContentCentralMixin': ~
+
+'TYPO3.Neos:PluginView':
+  superTypes:
+    'Ttree.ContentCentral:ContentCentralMixin': ~

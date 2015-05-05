@@ -1,0 +1,13 @@
+{
+    "name": "ttree/contentcentral",
+    "type": "typo3-flow-package",
+    "description": "A tools to do content inventory and review on top of Neos content management system",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Ttree\\ContentCentral": "Classes"
+        }
+    }
+}
