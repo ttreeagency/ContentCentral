@@ -67,11 +67,13 @@
       validation:
         'TYPO3.Neos/Validation/DateTimeValidator': []
     _hiddenBeforeDateTime:
+      type: DateTime
       ui:
         inspector:
           group: 'contentCentral'
           position: 40
     _hiddenAfterDateTime:
+      type: DateTime
       ui:
         inspector:
           group: 'contentCentral'
